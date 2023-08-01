@@ -21,8 +21,8 @@
                     @endphp
                     <img class="first-slide" src="{{url($link.$photo[0])}}"  style="width:100%; height:40rem;" alt="First slide">
                     <div class="carousel-caption d-none d-md-block text-left">
-                        <h1 class="wow fadeInDown">{{$banner->title}}</h1>
-                        <p>{!! html_entity_decode($banner->description) !!}</p>
+                        <h1 class="wow fadeInDown text-warning">{{$banner->title}}</h1>
+                        <p class="text-white h2">{!! html_entity_decode($banner->description) !!}</p>
                         <a class="btn btn-lg ws-btn wow fadeInUpBig" href="{{route('product-grids')}}" role="button">Shop Now<i class="far fa-arrow-alt-circle-right"></i></i></a>
                     </div>
                 </div>
@@ -53,15 +53,19 @@
                     @if($cat->is_parent==1)
                         <!-- Single Banner  -->
                         <div class="col-lg-4 col-md-6 col-12">
-                            <div class="single-banner">
-                                @if($cat->photo)
-                                    <img src="{{url($link.$photo[0])}}" >
-                                @else
-                                    <img src="https://via.placeholder.com/600x370" alt="#">
-                                @endif
+                            <div class="single-banner " style="width:100%; height:100%; ">
+                                @php
+                                $link=('storage/');
+                                $photo=explode(',',$cat->photo);
+                              //   dd($link);
+
+                              @endphp
+
+                                    <img src="{{url($link.$photo[0])}}"  style="width:100%; height:100%; ">
+
                                 <div class="content">
-                                    <h3>{{$cat->title}}</h3>
-                                        <a href="{{route('product-cat',$cat->slug)}}">Discover Now</a>
+                                    <h3 class="text-white">{{$cat->title}}</h3>
+                                        <a class="text-white " href="{{route('product-cat',$cat->slug)}}">Discover Now</a>
                                 </div>
                             </div>
                         </div>
@@ -402,7 +406,7 @@
                                                     <i class="yellow fa fa-star"></i>
                                                     <i class="yellow fa fa-star"></i>
                                                     <i class="fa fa-star"></i> --}}
-                                                    @php
+                                                    {{-- @php
                                                         $rate=DB::table('product_reviews')->where('product_id',$product->id)->avg('rate');
                                                         $rate_count=DB::table('product_reviews')->where('product_id',$product->id)->count();
                                                     @endphp
@@ -415,7 +419,7 @@
                                                     @endfor
                                                 </div>
                                                 <a href="#"> ({{$rate_count}} customer review)</a>
-                                            </div>
+                                            </div> --}}
                                             <div class="quickview-stock">
                                                 @if($product->stock >0)
                                                 <span><i class="fa fa-check-circle-o"></i> {{$product->stock}} in stock</span>

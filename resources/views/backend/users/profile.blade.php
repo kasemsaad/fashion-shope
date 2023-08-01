@@ -57,11 +57,8 @@
 
                       <div class="form-group">
                           <label for="role" class="col-form-label">Role</label>
-                          <select name="role" class="form-control">
-                              <option disabled value="">-----Select Role-----</option>
-                                  <option value="admin" {{(($profile->role=='admin')? 'selected' : '')}}>Admin</option>
-                                  <option value="user" {{(($profile->role=='user')? 'selected' : '')}}>User</option>
-                          </select>
+                          <input id="role"  type="role" name="role" placeholder="Enter role"  value="{{$profile->role}}" class="form-control">
+
                         @error('role')
                         <span class="text-danger">{{$message}}</span>
                         @enderror

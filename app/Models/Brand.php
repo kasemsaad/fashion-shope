@@ -20,7 +20,7 @@ class Brand extends Model
         // return Product::where('cat_id',$id)->where('child_cat_id',null)->paginate(10);
     }
     public static function countActiveBrand(){
-        $data=Banner::where('status','active')->count();
+        $data=Brand::where('status','active')->count();
         if($data){
             return $data;
         }

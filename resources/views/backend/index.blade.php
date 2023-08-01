@@ -11,16 +11,16 @@
     <!-- Content Row -->
     <div class="row">
     <!-- Banners -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="col-xl-3 col-md-6 mb-4"  >
         <div class="card border-left-primary shadow h-100 py-2">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Banners</div>
+                <a class="text-xs font-weight-bold text-primary text-uppercase mb-1" href="{{route('banner.index')}}">Banners</a>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\Banner::countActiveBanner()}}</div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-sitemap fa-2x text-gray-300"></i>
+                <i class="fas fa-image fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -29,11 +29,11 @@
 
       <!-- Category -->
       <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card border-left-success shadow h-100 py-2">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Category</div>
+                <a class="text-xs font-weight-bold text-success text-uppercase mb-1"  href="{{route('category.index')}}">Category</a>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\Category::countActiveCategory()}}</div>
               </div>
               <div class="col-auto">
@@ -46,11 +46,11 @@
 
       <!-- Products -->
       <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
+        <div class="card border-left-danger shadow h-100 py-2">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Products</div>
+                <a class="text-xs font-weight-bold text-danger text-uppercase mb-1" href="{{route('product.index')}}">Products</a>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\Product::countActiveProduct()}}</div>
               </div>
               <div class="col-auto">
@@ -61,16 +61,33 @@
         </div>
       </div>
     <!-- Brands -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
+        <div class="col-xl-3 col-md-6 mb-4" >
+            <div class="card border-left-info shadow h-100 py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Brands</div>
+                    <a class="text-xs font-weight-bold text-info text-uppercase mb-1" href="{{route('brand.index')}}">Brands</a>
                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\Brand::countActiveBrand()}}</div>
                   </div>
                   <div class="col-auto">
-                    <i class="fas fa-sitemap fa-2x text-gray-300"></i>
+                    <i class="fas fa-table fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+        <!-- Users -->
+        <div class="col-xl-3 col-md-6 mb-4" >
+            <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <a class="text-xs font-weight-bold text-success text-uppercase mb-1" href="{{route('users.index')}}">USERS</a>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\User::countActiveUser()}}</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-users fa-2x text-gray-300"></i>
                   </div>
                 </div>
               </div>

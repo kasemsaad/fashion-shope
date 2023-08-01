@@ -48,4 +48,11 @@ class User extends Authenticatable
     public function books(){
         return 'HIII!';
     }
+    public static function countActiveUser(){
+        $data=User::where('status','active')->count();
+        if($data){
+            return $data;
+        }
+        return 0;
+    }
 }

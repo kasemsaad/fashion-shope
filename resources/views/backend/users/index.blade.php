@@ -20,7 +20,6 @@
               <th>S.N.</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Join Date</th>
               <th>Role</th>
               <th>Status</th>
               <th>Action</th>
@@ -33,7 +32,6 @@
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
-                    <td>{{(($user->created_at)? $user->created_at->diffForHumans() : '')}}</td>
                     <td>{{$user->role}}</td>
                     <td>
                         @if($user->status=='active')
